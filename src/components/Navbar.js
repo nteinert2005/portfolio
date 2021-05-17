@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
+import './Navbar.scss';
 
 
 const Navbar = () => {
+    const [ open, setOpen ] = useState(false);
+
     return (
         <NavbarWrapper>
             <Logo>
@@ -27,17 +31,38 @@ const Navbar = () => {
                 </ul> 
             </RightSection>
             <Hamburger>
-                <i class="bi bi-list"></i>
+                <i  onClick={()=> setOpen(true)}
+                    class="bi bi-list"></i>
             </Hamburger>
-            <MobileMenu>
-
+            <MobileMenu className={ open ? "active" : "" }>
+            <i 
+                onClick={() => setOpen(false)}
+            style={{
+                color: 'black',
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+            }} class="bi bi-x-lg"></i>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                </ul>
             </MobileMenu>
         </NavbarWrapper>
     );
 };
 
 const MobileMenu = styled.div`
-    
+    display: none;
+    background: white;
+    width: 50%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+
+    ul {
+        margin-top: 50px;
+    }
 `
 
 const Hamburger = styled.a`
