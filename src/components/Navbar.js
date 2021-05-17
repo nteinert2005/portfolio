@@ -29,10 +29,16 @@ const Navbar = () => {
             <Hamburger>
                 <i class="bi bi-list"></i>
             </Hamburger>
+            <MobileMenu>
+
+            </MobileMenu>
         </NavbarWrapper>
     );
 };
 
+const MobileMenu = styled.div`
+    
+`
 
 const Hamburger = styled.a`
     display: none;
