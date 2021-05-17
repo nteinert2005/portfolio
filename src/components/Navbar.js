@@ -44,7 +44,12 @@ const Navbar = () => {
                 right: '20px',
             }} class="bi bi-x-lg"></i>
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Home </a></li>
+                    <li><a href="/">About </a></li>
+                    <li><a href="/">Services </a></li>
+                    <li><a href="/">Portfolio </a></li>
+                    <li><a href="/">Blog </a></li>
+                    <li><a href="/">Contact </a></li>
                 </ul>
             </MobileMenu>
         </NavbarWrapper>
@@ -62,7 +67,20 @@ const MobileMenu = styled.div`
 
     ul {
         margin-top: 50px;
+        padding: 2em;
+        list-style: none;
+
+        li {
+            padding: 10px 0;
+
+            a {
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+            }
+        }
     }
+
 `
 
 const Hamburger = styled.a`
